@@ -8,25 +8,29 @@
   </head>
   <body class="h-full w-full text-white bg-gray-600">
     <h1 class="text-center text-4xl font-bold my-8">Recipe App</h1>
-    <input type="text" id="search" placeholder="Search" class="border-2 ml-48 pl-6 outline-0 h-10 rounded-2xl w-1/4" onchange="changes()">
-    <button onclick="window.location.href='http://127.0.0.1:5500/addRecipe.html'" class="bg-blue-600 px-8  py-2 rounded-xl ml-2">Add Recipe</button>
-    <div class=" h-full w-full mt-4 flex justify-center">
-      <div class="w-3/4">
-        <table class="w-full h-full">
-          <thead>
-            <tr>
-              <th class="border-2">Id</th>
-              <th class="border-2">Name</th>
-              <th class="border-2">Type</th>
-              <th class="border-2">Description</th>
-              <th class="border-2">Edit</th>
-            </tr>
-          </thead>
-          <tbody id="t_body">
-            
-          </tbody>
-        </table>
+    <div class="flex gap-4">
+      <input type="text" id="search" placeholder="Search" class="border-2  pl-6 outline-0 h-10 rounded-2xl w-11/12" onchange="changes()">
+      <button onclick="window.location.href='http://127.0.0.1:5500/addRecipe.html'" class="bg-blue-600 px-4  py-2 rounded-xl ml-2 font-bold text-xl">+</button>
+    </div>
+    <div id="box" class=" grid lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2   h-full w-auto gap-x-2 gap-y-2 mt-4 mx-2">
+      <div class="bg-white h-48 pt-4 rounded-lg">
+        <h1 class="text-black ">Id: <span class="font-bold">168465161616</span></h1>
+        <h1 class="text-black ">Name : <span class="font-bold capitalize">Roti</span></h1>
+        <h1 class="text-black ">Type : <span class="font-bold capitalize">Lunch</span></h1>
+        <h1 class="text-black ">description : <span class="font-bold capitalize">this is very good for you </span></h1>
+        <div class="w-full">
+          <div class="flex gap-8 justify-around my-8 ">
+                    <button class="bg-amber-400 px-8 rounded-2xl" >Edit</button> 
+                    <button class="bg-red-600 px-8 rounded-2xl">Delete</button></td>
+                </div>
+        </div>
       </div>
+      <div class="bg-white h-48">
+      </div>
+      <div class="bg-white h-48"></div>
+      <div class="bg-white h-48"></div>
+      <div class="bg-white h-48"></div>
+      <div class="bg-white h-48"></div>
     </div>
     <script src="script.js"></script>
   </body>

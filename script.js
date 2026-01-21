@@ -3,23 +3,44 @@ let content = "";
 // console.log("hi");
 
 let recipes_list = JSON.parse(localStorage.getItem("recipes_list")) || [];
+// recipes_list.map((val) => {
+//   content =
+//     content +
+//     `
+//     <tr>
+//               <td class="border-2 text-center">${val.id}</td>
+//               <td class="border-2 text-center">${val.name}</td>
+//               <td class="border-2 text-center">${val.type}</td>
+//               <td class="border-2 text-center">${val.description}</td>
+//               <td class="border-2 text-center">
+//                 <div class="flex gap-8 justify-around my-4">
+//                     <button class="bg-amber-400 px-8 rounded-2xl" onclick="EditRecipe('${val.id}','${val.name}','${val.type}','${val.description}')">Edit</button>
+//                     <button class="bg-red-600 px-8 rounded-2xl" onclick="DeleteRecipe('${val.id}')">Delete</button></td>
+//                 </div>
+//             </tr>
+//             `;
+// });
+
 recipes_list.map((val) => {
   content =
     content +
-    `<tr>
-              <td class="border-2 text-center">${val.id}</td>
-              <td class="border-2 text-center">${val.name}</td>
-              <td class="border-2 text-center">${val.type}</td>
-              <td class="border-2 text-center">${val.description}</td>
-              <td class="border-2 text-center">
-                <div class="flex gap-8 justify-around my-4">
+    `
+    <div class="bg-white h-48 pt-4 rounded-lg px-4">
+        <h1 class="text-black ">Id: <span class="font-bold">${val.id}</span></h1>
+        <h1 class="text-black ">Name : <span class="font-bold capitalize">${val.name}</span></h1>
+        <h1 class="text-black ">Type : <span class="font-bold capitalize">${val.type}</span></h1>
+        <h1 class="text-black ">description : <span class="font-bold capitalize">${val.description}</span></h1>
+        <div class="w-full">
+          <div class="flex gap-8 justify-around my-8 ">
                     <button class="bg-amber-400 px-8 rounded-2xl" onclick="EditRecipe('${val.id}','${val.name}','${val.type}','${val.description}')">Edit</button> 
                     <button class="bg-red-600 px-8 rounded-2xl" onclick="DeleteRecipe('${val.id}')">Delete</button></td>
                 </div>
-            </tr>`;
+        </div>
+      </div>
+            `;
 });
 
-const table_body = document.getElementById("t_body");
+const table_body = document.getElementById("box");
 if (table_body) {
   table_body.innerHTML = content;
 }
@@ -122,20 +143,21 @@ function changes() {
     recipes_list.map((val) => {
       content =
         content +
-        `<tr>
-              <td class="border-2 text-center">${val.id}</td>
-              <td class="border-2 text-center">${val.name}</td>
-              <td class="border-2 text-center">${val.type}</td>
-              <td class="border-2 text-center">${val.description}</td>
-              <td class="border-2 text-center">
-                <div class="flex gap-8 justify-around my-4">
+        `<div class="bg-white h-48 pt-4 rounded-lg px-4">
+        <h1 class="text-black ">Id: <span class="font-bold">${val.id}</span></h1>
+        <h1 class="text-black ">Name : <span class="font-bold capitalize">${val.name}</span></h1>
+        <h1 class="text-black ">Type : <span class="font-bold capitalize">${val.type}</span></h1>
+        <h1 class="text-black ">description : <span class="font-bold capitalize">${val.description}</span></h1>
+        <div class="w-full">
+          <div class="flex gap-8 justify-around my-8 ">
                     <button class="bg-amber-400 px-8 rounded-2xl" onclick="EditRecipe('${val.id}','${val.name}','${val.type}','${val.description}')">Edit</button> 
                     <button class="bg-red-600 px-8 rounded-2xl" onclick="DeleteRecipe('${val.id}')">Delete</button></td>
                 </div>
-            </tr>`;
+        </div>
+      </div>`;
     });
 
-    const table_body = document.getElementById("t_body");
+    const table_body = document.getElementById("box");
     if (table_body) {
       table_body.innerHTML = content;
     }
@@ -151,21 +173,22 @@ function changes() {
       ) {
         content =
           content +
-          `<tr>
-              <td class="border-2 text-center">${val.id}</td>
-              <td class="border-2 text-center">${val.name}</td>
-              <td class="border-2 text-center">${val.type}</td>
-              <td class="border-2 text-center">${val.description}</td>
-              <td class="border-2 text-center">
-                <div class="flex gap-8 justify-around my-4">
+          `<div class="bg-white h-48 pt-4 rounded-lg px-4">
+        <h1 class="text-black ">Id: <span class="font-bold">${val.id}</span></h1>
+        <h1 class="text-black ">Name : <span class="font-bold capitalize">${val.name}</span></h1>
+        <h1 class="text-black ">Type : <span class="font-bold capitalize">${val.type}</span></h1>
+        <h1 class="text-black ">description : <span class="font-bold capitalize">${val.description}</span></h1>
+        <div class="w-full">
+          <div class="flex gap-8 justify-around my-8 ">
                     <button class="bg-amber-400 px-8 rounded-2xl" onclick="EditRecipe('${val.id}','${val.name}','${val.type}','${val.description}')">Edit</button> 
                     <button class="bg-red-600 px-8 rounded-2xl" onclick="DeleteRecipe('${val.id}')">Delete</button></td>
                 </div>
-            </tr>`;
+        </div>
+      </div>`;
       }
     });
 
-    const table_body = document.getElementById("t_body");
+    const table_body = document.getElementById("box");
     if (table_body) {
       table_body.innerHTML = content;
     }
