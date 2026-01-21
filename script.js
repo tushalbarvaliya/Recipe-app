@@ -69,8 +69,7 @@ function EditRecipe(id, name, type, description) {
   window.location.href = "http://127.0.0.1:5500/editRecipes.html";
 }
 
-
-doEdit()
+doEdit();
 function doEdit() {
   const editRecipe = JSON.parse(localStorage.getItem("edit"));
   if (!editRecipe) {
@@ -83,9 +82,9 @@ function doEdit() {
   }
 }
 
-function EditSubmit(){
+function EditSubmit() {
   let recipes_list = JSON.parse(localStorage.getItem("recipes_list"));
-  let edir_list = JSON.parse(localStorage.getItem('edit'))
+  let edir_list = JSON.parse(localStorage.getItem("edit"));
   const id_input = document.getElementById("e_id").value;
   const name_input = document.getElementById("e_name").value;
   const type_input = document.getElementById("e_type").value;
@@ -98,18 +97,77 @@ function EditSubmit(){
     description: desc_input,
   };
   let newRecipe_list = recipes_list.map((val) => {
-    if(val.id==edir_list.id){
-      return recipe
-    }else{
-      return val
+    if (val.id == edir_list.id) {
+      return recipe;
+    } else {
+      return val;
     }
   });
-  localStorage.setItem('recipes_list',JSON.stringify(newRecipe_list))
-  localStorage.removeItem('edit')
+  localStorage.setItem("recipes_list", JSON.stringify(newRecipe_list));
+  localStorage.removeItem("edit");
 
   // console.log(newRecipe_list);
-  window.location.href = 'http://127.0.0.1:5500/index.html' 
-
+  window.location.href = "http://127.0.0.1:5500/index.html";
 }
 
 // window.addEventListener('DOMContentLoaded',doEdit);
+
+function changes() {
+  const search = document.getElementById("search");
+  if (search.value == "") {
+    // search is blank
+    let recipes_list = JSON.parse(localStorage.getItem("recipes_list")) || [];
+    content = "";
+    // console.log("EMPTY");
+    recipes_list.map((val) => {
+      content =
+        content +
+        `<tr>
+              <td class="border-2 text-center">${val.id}</td>
+              <td class="border-2 text-center">${val.name}</td>
+              <td class="border-2 text-center">${val.type}</td>
+              <td class="border-2 text-center">${val.description}</td>
+              <td class="border-2 text-center">
+                <div class="flex gap-8 justify-around my-4">
+                    <button class="bg-amber-400 px-8 rounded-2xl" onclick="EditRecipe('${val.id}','${val.name}','${val.type}','${val.description}')">Edit</button> 
+                    <button class="bg-red-600 px-8 rounded-2xl" onclick="DeleteRecipe('${val.id}')">Delete</button></td>
+                </div>
+            </tr>`;
+    });
+
+    const table_body = document.getElementById("t_body");
+    if (table_body) {
+      table_body.innerHTML = content;
+    }
+  } else {
+    // search is not black
+    let recipes_list = JSON.parse(localStorage.getItem("recipes_list")) || [];
+    content = "";
+    recipes_list.map((val) => {
+      if (
+        val.name.includes(search.value) ||
+        val.type.includes(search.value) ||
+        val.description.includes(search.value)
+      ) {
+        content =
+          content +
+          `<tr>
+              <td class="border-2 text-center">${val.id}</td>
+              <td class="border-2 text-center">${val.name}</td>
+              <td class="border-2 text-center">${val.type}</td>
+              <td class="border-2 text-center">${val.description}</td>
+              <td class="border-2 text-center">
+                <div class="flex gap-8 justify-around my-4">
+                    <button class="bg-amber-400 px-8 rounded-2xl" onclick="EditRecipe('${val.id}','${val.name}','${val.type}','${val.description}')">Edit</button> 
+                    <button class="bg-red-600 px-8 rounded-2xl" onclick="DeleteRecipe('${val.id}')">Delete</button></td>
+                </div>
+            </tr>`;
+      }
+    });
+
+    const table_body = document.getElementById("t_body");
+    if (table_body) {
+      table_body.innerHTML = content;
+    }
+  }
+}

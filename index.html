@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="h-full w-full text-white bg-gray-600">
-    <h1 class="text-center text-4xl font-bold mt-4">Recipe App</h1>
-    <input type="text" placeholder="Search" class="border-2 ml-48 pl-6 outline-0 h-10 rounded-2xl w-1/4" onchange="">
-    <button onclick="window.location.href='http://127.0.0.1:5500/addRecipe.html'" class="bg-blue-600 px-8  py-2 rounded-xl ml-2">Add</button>
+    <h1 class="text-center text-4xl font-bold my-8">Recipe App</h1>
+    <input type="text" id="search" placeholder="Search" class="border-2 ml-48 pl-6 outline-0 h-10 rounded-2xl w-1/4" onchange="changes()">
+    <button onclick="window.location.href='http://127.0.0.1:5500/addRecipe.html'" class="bg-blue-600 px-8  py-2 rounded-xl ml-2">Add Recipe</button>
     <div class=" h-full w-full mt-4 flex justify-center">
       <div class="w-3/4">
         <table class="w-full h-full">
