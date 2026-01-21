@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="h-full w-full text-white bg-gray-600">
+    <h1 class="text-center text-4xl font-bold mt-4">Recipe App</h1>
+    <input type="text" placeholder="Search" class="border-2 ml-48 pl-6 outline-0 h-10 rounded-2xl w-1/4" onchange="">
+    <button onclick="window.location.href='http://127.0.0.1:5500/addRecipe.html'" class="bg-blue-600 px-8  py-2 rounded-xl ml-2">Add</button>
+    <div class=" h-full w-full mt-4 flex justify-center">
+      <div class="w-3/4">
+        <table class="w-full h-full">
+          <thead>
+            <tr>
+              <th class="border-2">Id</th>
+              <th class="border-2">Name</th>
+              <th class="border-2">Type</th>
+              <th class="border-2">Description</th>
+              <th class="border-2">Edit</th>
+            </tr>
+          </thead>
+          <tbody id="t_body">
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
