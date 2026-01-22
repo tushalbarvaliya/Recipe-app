@@ -9,7 +9,7 @@
   <body class="h-full w-full text-white bg-gray-600">
     <h1 class="text-center text-4xl font-bold my-8">Recipe App</h1>
     <div class="flex gap-4">
-      <input type="text" id="search" placeholder="Search" class="border-2  pl-6 outline-0 h-10 rounded-2xl w-11/12" onchange="changes()">
+      <input type="text" id="search" placeholder="Search" class="border-2  pl-6 outline-0 h-10 rounded-2xl w-11/12" oninput="changes()">
       <button onclick="window.location.href='http://127.0.0.1:5500/addRecipe.html'" class="bg-blue-600 px-4  py-2 rounded-xl ml-2 font-bold text-xl">+</button>
     </div>
     <div id="box" class=" grid lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2   h-full w-auto gap-x-2 gap-y-2 mt-4 mx-2">
