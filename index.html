@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="h-full w-full text-white bg-gray-600">
+    <h1 class="text-center text-4xl font-bold my-8">Recipe App</h1>
+    <div class="flex gap-4">
+      <input type="text" id="search" placeholder="Search" class="border-2  pl-6 outline-0 h-10 rounded-2xl w-11/12" oninput="changes()">
+      <button onclick="window.location.href='http://127.0.0.1:5500/addRecipe.html'" class="bg-blue-600 px-4  py-2 rounded-xl ml-2 font-bold text-xl">+</button>
+    </div>
+    <div id="box" class=" grid lg:grid-cols-4 md:grid-cols-3  sm:grid-cols-2   h-full w-auto gap-x-2 gap-y-2 mt-4 mx-2">
+      <div class="bg-white h-48 pt-4 rounded-lg">
+        <h1 class="text-black ">Id: <span class="font-bold">168465161616</span></h1>
+        <h1 class="text-black ">Name : <span class="font-bold capitalize">Roti</span></h1>
+        <h1 class="text-black ">Type : <span class="font-bold capitalize">Lunch</span></h1>
+        <h1 class="text-black ">description : <span class="font-bold capitalize">this is very good for you </span></h1>
+        <div class="w-full">
+          <div class="flex gap-8 justify-around my-8 ">
+                    <button class="bg-amber-400 px-8 rounded-2xl" >Edit</button> 
+                    <button class="bg-red-600 px-8 rounded-2xl">Delete</button></td>
+                </div>
+        </div>
+      </div>
+      <div class="bg-white h-48">
+      </div>
+      <div class="bg-white h-48"></div>
+      <div class="bg-white h-48"></div>
+      <div class="bg-white h-48"></div>
+      <div class="bg-white h-48"></div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

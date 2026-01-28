@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-300 h-screen w-full flex justify-center items-center">
+    <div class="w-full h-3/4 ">
+      <form action="./index.html" class="w-full h-full flex justify-center items-center">
+      <div class="h-full w-1/4 bg-white rounded-2xl">
+        <h1 class="text-center text-3xl font-bold mt-4">Recipe Edit</h1>
+        <div class="flex w-full flex-col gap-4 px-4 mt-8">
+          <input
+            type="text"
+            name="r_id"
+            id="e_id"
+            value=""
+            placeholder="Recipe Id"
+            class="border-2 outline-0 border-black rounded-md h-10 pl-4 opacity-100"
+            readonly
+          />
+          <input
+            type="text"
+            name="r_name"
+            id="e_name"
+            value=""
+            placeholder="Recipe Name"
+            class="border-2 outline-0 border-black rounded-md h-10 pl-4 opacity-100"
+          />
+          <input
+            type="text"
+            name="r_type"
+            id="e_type"
+            value=""
+            placeholder="Recipe type"
+            class="border-2 outline-0 border-black rounded-md h-10 pl-4 opacity-100"
+          />
+          <input
+            type="text"
+            name="r_description"
+            id="e_description"
+            value=""
+            placeholder="Recipe Describtion"
+            class="border-2 outline-0 border-black rounded-md h-10 pl-4 opacity-100"
+          />
+        </div>
+        <div class="flex  justify-evenly mt-10">
+            <button type="" class="bg-amber-600 p-2 rounded-xl px-4" onclick="EditSubmit()">Edit</button>
+        </div>
+      </div>
+      </form>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
